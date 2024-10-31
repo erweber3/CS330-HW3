@@ -1,0 +1,53 @@
+@model Fall2024_Assignment3_erweber3.Models.ActorDetailsViewModel
+
+@{
+    ViewData["Title"] = "Actor Details";
+}
+
+<h1>Actor Details</h1>
+
+<div>
+    <h4>Actor</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Actor.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Actor.Name)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Actor.Gender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Actor.Gender)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Actor.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Actor.Age)
+        </dd>
+
+        <dt class="col-sm-2">
+            IMDb Link
+        </dt>
+        <dd class="col-sm-10">
+            <a href="@Model.Actor.ImdbLink" target="_blank">@Model.Actor.ImdbLink</a>
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Actor.PhotoUrl)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@Model.Actor.PhotoUrl" alt="Actor Photo" style="max-width: 150px; height: auto;" />
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Actor.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
